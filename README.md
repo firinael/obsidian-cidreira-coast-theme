@@ -8,9 +8,9 @@
 
 ***highly*** recommended plugins| fonts used |
 :--------------------------------:|:--------:|
-[Hider](https://github.com/kepano/obsidian-hider)| Quicksand for UI |
-[Sliding Panes (Andy Matuschak Mode)](https://github.com/deathau/sliding-panes-obsidian)| Petrona and Computer Modern for body |
-[Buttons](https://github.com/shabegom/buttons) <sub>join the cult</sub>| JetBrains Mono for code blocks |
+[Hider](https://github.com/kepano/obsidian-hider)| Quicksand (UI and menus) |
+[Sliding Panes (Andy Matuschak Mode)](https://github.com/deathau/sliding-panes-obsidian)| Petrona and Computer Modern (body and highlights) |
+[Buttons](https://github.com/shabegom/buttons) <sub>join the cult</sub>| JetBrains Mono (code blocks) |
 
 <br>
 
