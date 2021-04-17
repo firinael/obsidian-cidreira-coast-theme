@@ -1673,6 +1673,7 @@ input[type='range'] {
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
   height: 100%;
+  background-color: var(--color-white-rgb);
 }
 
 .nav-header {
