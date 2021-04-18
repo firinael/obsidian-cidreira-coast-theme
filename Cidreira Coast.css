@@ -653,7 +653,7 @@ button,
 .markdown-preview-view h6 {
     padding-top: 5px !important;
     margin-top: 20px !important;
-    margin-bottom: -20px !important;
+    margin-bottom: -7px !important;
     padding-bottom: 5px !important;
 }
 
@@ -1614,6 +1614,17 @@ input[type='range']::-webkit-slider-thumb {
 input[type='range'] {
   outline: none;
 }
+
+/* bold numbered lists */
+
+li::marker{
+	font-weight: bold;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
 
 /* --------------- */
 /* Toggle switches */
@@ -5242,7 +5253,7 @@ body {
     --h2-size: 1.9em;
     --h2-line-height: 1.4;
     --h2-margin-top: 2.25;
-    --h2-margin-bottom: 0.5; 
+    --h2-margin-bottom: 13px; 
     --h2-weight: 500; 
     --h2-style: normal; 
 
@@ -5308,7 +5319,7 @@ body {
   font-size: var(--h2-size) !important;
   line-height: var(--h2-line-height);
   margin-top: calc(var(--h2-margin-top) * var(--editor-line-height-rem));
-  margin-bottom: calc(var(--h2-margin-bottom) * var(--editor-line-height-rem));
+  margin-bottom: var(--h2-margin-bottom);
   font-weight: var(--h2-weight);
   font-style: var(--h2-style);
 }
