@@ -880,14 +880,24 @@ body:not(.is-translucent):not(.hider-frameless)
 .workspace-split.mod-vertical > .workspace-split {
   padding: 0;
 }
+.is-translucent .workspace-split .workspace-tabs {
+  background: transparent !important;
+}
+
+.is-translucent .workspace-split:not(.mod-right-split) .workspace-tabs {
+  background-color: #91887D;
+  box-shadow: inset -10px 0 4px -10px rgba(0, 0, 0, 0.04);
+}
+
 .workspace-split .workspace-tabs {
-  background: var(--background-primary);
+  background: #91887D !important;
 }
 
 .workspace-split:not(.mod-right-split) .workspace-tabs {
-  background-color: transparent;
+  background-color: #91887D;
   box-shadow: inset -10px 0 4px -10px rgba(0, 0, 0, 0.04);
 }
+
 .workspace-split.mod-root
   > .workspace-leaf:first-of-type
   .workspace-leaf-content,
@@ -3795,6 +3805,10 @@ iframe {
   margin-right: auto;
   margin-left: auto;
   line-height: 1.2em;
+}
+
+.markdown-preview-view blockquote p {
+	margin-left: 35px !important;
 }
 
 /* Tables */
