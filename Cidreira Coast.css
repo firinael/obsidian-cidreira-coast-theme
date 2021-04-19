@@ -307,6 +307,10 @@ body:not(.hider-ribbon):not(.hider-frameless)
   flex-grow: 0;
 }
 
+.is-translucent .workspace-ribbon.mod-left {
+	background: var(--background-translucent) !important;
+}
+
 .workspace-ribbon.mod-left .side-dock-ribbon-action {
 	display: block;
 }
@@ -319,6 +323,11 @@ body:not(.hider-ribbon):not(.hider-frameless)
 	background: #91887D !important;
 	border-color: #91887D !important;
 }
+
+.is-translucent .workspace-split.mod-horizontal.mod-left-split .workspace-tabs{
+	background: var(--background-translucent) !important;
+}
+
 
 /* 
       ------------------------------------------------------------------
@@ -885,10 +894,6 @@ input.prompt-input:hover {
 	background-color: var(--background-primary);
 }
 
-.is-translucent .workspace {
-  background-color: var(--background-translucent);
-}
-
 .workspace-split.mod-root {
   background-color: var(--background-primary);
 }
@@ -916,36 +921,9 @@ body:not(.is-translucent):not(.hider-frameless)
   padding: 0;
 }
 
-/* .is-translucent .workspace-split .workspace-tabs {
-  background: transparent !important;
-} */
-
-/* .is-translucent .workspace-split:not(.mod-right-split) .workspace-tabs {
-  background-color: #91887D;
-  box-shadow: inset -10px 0 4px -10px rgba(0, 0, 0, 0.04);
-} */
-
 .workspace-split.mod-right-split {
 	background: var(--background-primary) !important;
 }
-
-.workspace-split.mod-left-split {
-	background: #91887D !important;
-}
-
-.is-transluscent .workspace-split.mod-left-split {
-	background: transparent;
-	background-color: #91887D;
-  	box-shadow: inset -10px 0 4px -10px rgba(0, 0, 0, 0.04);
-}
-/* .workspace-split .workspace-tabs {
-  background: #91887D !important;
-} */
-
-/* .workspace-split:not(.mod-right-split) .workspace-tabs {
-  background-color: #91887D;
-  box-shadow: inset -10px 0 4px -10px rgba(0, 0, 0, 0.04);
-} */
 
 .workspace-split.mod-root
   > .workspace-leaf:first-of-type
@@ -1120,8 +1098,7 @@ body:not(.is-translucent):not(.hider-frameless)
 }
 
 .is-translucent .titlebar {
-  background: transparent;
-  background-color: #91887D;
+  background: var(--background-translucent);
 }
 
 .hider-frameless .titlebar {
@@ -2428,7 +2405,7 @@ input.search-input:focus {
   position: absolute;
   right: 0;
   bottom: 0;
-  background: var(--shade-20);
+  background: var(--shade-10) !important;
   border-top: 1px solid var(--shade-20);
   border-left: 1px solid var(--shade-20);
   border-top-left-radius: var(--radius-m);
