@@ -1454,7 +1454,7 @@ input.document-replace-input:focus {
 .community-plugin-search button.clickable-icon {
   display: block;
   margin: 0 16px 0 0;
-  color: var(--text);
+  color: var(--text-on-accent);
   transition: .2s;
 }
 
