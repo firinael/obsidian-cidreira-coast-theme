@@ -1666,7 +1666,7 @@ button.mod-cta {
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-m);
-
+  transition: .2s;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -2957,15 +2957,20 @@ F
   flex-direction: column;
   align-items: center;
   padding: 4px 28px 4px 14px;
-  background-color: var(--color-white);
+  background-color: var(--shade-10);
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-m);
   order: 0;
   flex-grow: 0;
   cursor: var(--cursor);
+  transition: .2s;
 }
 
+.dropdown:hover {
+	background-color: var(--shade-20);
+	transition: .2s;
+}
 
 /* --------------- */
 /* Scroll bars */
