@@ -163,6 +163,59 @@ th {
 	font-size: 1.1em !important; 
 }
 
+/* mermaid.js styling */
+.markdown-preview-view .mermaid {
+	border: 1px solid var(--shade-20) !important;
+	border-radius: var(--radius-s);
+	padding: 2px !important;
+	margin-top: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	font-style: italic;
+}
+
+.markdown-preview-view .mermaid svg {
+	width: 100%;
+	text-align: center;
+	padding: 0px !important;
+	margin: 0px !important;
+	background: var(--shade-10);
+	vertical-align: middle !important;
+	border: 0px solid transparent;
+	border-radius: var(--radius-s);
+}
+
+.markdown-preview-view .mermaid .node rect.label-container, ellipse.label-container, polygon.label-container, circle.label-container {
+	fill: var(--color-white) !important;
+	stroke: var(--shade-20) !important;
+}
+
+.markdown-preview-view .mermaid .node .label {
+	color: var(--shade-90) !important;
+	vertical-align: middle !important;
+	text-align: center !important;
+}
+
+.markdown-preview-view .mermaid .edgePath .path {
+	stroke: var(--shade-20) !important;
+}
+
+.markdown-preview-view .mermaid .edgePaths defs * {
+	fill: var(--shade-90) !important;
+
+}
+/* end */
+
+
+/* larger text body width */
+.markdown-source-view .CodeMirror, .markdown-preview-view .markdown-preview-sizer{
+  max-width: 850px; /* 700px is default */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* end */
+
+
 .hider-frameless .workspace-split.mod-right-split > .workspace-tabs,
 .hider-frameless .workspace-split.mod-root .view-header {
   padding-top: 2px;
