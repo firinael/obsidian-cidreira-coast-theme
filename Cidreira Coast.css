@@ -1,7 +1,7 @@
 /* @settings
 
 name: Cidreira Coast Theme
-id: obsidian-cidreira-coast
+id: obsidian-cidreira-coast-theme
 
 */
 
@@ -17,7 +17,9 @@ id: obsidian-cidreira-coast
   --accent-d: calc(var(--accent-l) + 2%); /* Accent lightness d */
 
   --color-black-rgb: 0, 0, 0;
+  --color-black: rgb(var(--color-black-rgb));
   --color-white-rgb: 244, 226, 205;
+  --color-white: rgb(var(--color-white-rgb));
 
   --text: "Quicksand";
   --text-body: "Petrona";
@@ -67,15 +69,15 @@ id: obsidian-cidreira-coast
 }
 
 .theme-light {
-  --red-rgb: 255, 59, 48;
-  --orange-rgb: 255, 149, 0;
-  --yellow-rgb: 255, 204, 0;
-  --green-rgb: 52, 199, 89;
-  --teal-rgb: 90, 200, 250;
-  --blue-rgb: 0, 122, 255;
-  --indigo-rgb: 88, 86, 214;
-  --purple-rgb: 175, 82, 222;
-  --pink-rgb: 255, 45, 85;
+  --color-red-rgb: 175, 62, 77;
+  --color-red: rgb(var(--color-red-rgb));
+  --color-blue-rgb: 109, 152, 186;
+  --color-blue: rgb(var(--color-blue-rgb));
+  --color-purple-rgb: 120, 88, 111;
+  --color-purple: rgb(var(--color-purple-rgb));
+
+  --color-accent-rgb: 120, 88, 111;
+  --color-accent: rgb(var(--color-accent-rgb));
 
   --accent-hsl: 316.9, 15.4%, 40.8%;
 
@@ -96,8 +98,6 @@ id: obsidian-cidreira-coast
   --shade-2: rgba(var(--foreground-rgb), 0.02);
   --shade-0: rgb(var(--background-rgb));
 
-  --shade-20: var(--shade-5);
-  --shade-20-hsl: hsl(0, 0%, 95%);
   --background-primary: var(--shade-0);
   --background-primary-alt: var(--shade-3);
   --background-secondary: var(--shade-3);
@@ -125,16 +125,15 @@ id: obsidian-cidreira-coast
   );
   --text-on-accent: white;
   --icon-hex: 000;
-  --interactive-accent: #78586F;
+  --interactive-accent: var(--color-accent);
   --interactive-accent-hover: hsl(
     var(--accent-h),
     var(--accent-s),
     calc(var(--accent-l) - 10%)
   );
   --quote-opening-modifier: var(--shade-70);
-  --interactive-accent-rgb: var(--shade-70);
   --text-selection: white;
-  --text-highlight-bg: rgba(120, 88, 111, 0.5);
+  --text-highlight-bg: rgba(var(--accent-rgb), 0.5);
   --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
   --background-modifier-cover: rgba(100, 100, 100, 0.6);
 
@@ -193,6 +192,17 @@ th {
 /* 
     ------------------------------------------------------------------
 */
+
+button.mod-warning {
+	background-color: var(--text-error) !important;
+	transition: .2s;
+}
+
+button.mod-warning:hover {
+	background-color: red !important;
+	color: black;
+	transition: .2s;
+}
 
 .side-dock-ribbon-action svg {
 	text-align: center !important;
@@ -414,7 +424,7 @@ hr {
     color: var(--interactive-accent) !important;
     text-shadow: 0 0 0 var(--interactive-accent) !important;
     padding: 8px; /*Symbol Padding*/
-    background-color: rgba(244, 226, 205,1) !important; /*Color bg to cover line*/
+    background-color: var(--color-white) !important; /*Color bg to cover line*/
 }
 
 /*Center --- Lines*/
@@ -533,7 +543,7 @@ figcaption#center {
 }
 
 .lt-predictions-container {
-  background-color: rgba(244, 226, 205,1) !important;
+  background-color: var(--color-white) !important;
   animation-duration: 0.2s !important;
   transition: height 0.2s !important;
   border-radius: 25px !important;
@@ -743,7 +753,7 @@ element.style {
 .menu {
   color: var(--shade-90);
   border: 2px solid var(--shade-10);
-  background-color: rgba(244, 226, 205, 1);
+  background-color: var(--color-white);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 
   font-weight: 500;
@@ -1153,8 +1163,8 @@ body:not(.is-translucent):not(.hider-frameless)
 }
 
 .titlebar-button.mod-close:hover {
-  background-color: rgb(var(--red-rgb));
-  color: rgb(var(--color-white-rgb));
+  background-color: var(--color-red);
+  color: var(--color-white);
   transition: .2s ease-in-out;
 }
 
@@ -1583,6 +1593,10 @@ textarea {
   padding: 8px 10px;
 }
 
+.modal button:not(.mod-cta):not(.mod-warning){
+	background-color: var(--interactive-accent);
+}
+
 .modal.mod-settings button:not(.mod-cta):not(.mod-warning),
 .setting-item-control button,
 button,
@@ -1594,7 +1608,7 @@ button.mod-cta {
   flex-direction: column;
   align-items: center;
   padding: 4px 14px;
-  background: var(--interactive-accent) !important;
+  background-color: var(--interactive-accent);
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
@@ -1714,7 +1728,7 @@ li {
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
   height: 100%;
-  background-color: var(--color-white-rgb);
+  background-color: transparent;
 }
 
 .nav-header {
@@ -2767,7 +2781,7 @@ F
 
 /* filled color for the circle when not hover*/
 .graph-view.color-fill {
-  color: var(--text-normal);
+  color: var(--text-normal) ;
 }
 
 /*  color for the connecting line when not hover  --background-modifier-border*/
@@ -2783,12 +2797,12 @@ F
 
 /* filled color for the circle when hover*/
 .graph-view.color-fill-highlight {
-  color: var(--text-accent);
+  color: var(--color-accent);
 }
 
 /*  color for the connecting line when hover*/
 .graph-view.color-line-highlight {
-  color: var(--text-accent);
+  color: var(--shade-50);
   border: 0;
 }
 
@@ -2803,11 +2817,11 @@ F
 }
 
 .graph-view.color-fill-tag {
-  color: rgb(var(--teal-rgb)) !important;
+  color: var(--color-accent) !important;
 }
 
 .graph-view.color-fill-attachment {
-  color: rgb(var(--yellow-rgb)) !important;
+  color: var(--color-red) !important;
 }
 
 /* --------------- */
@@ -2890,7 +2904,7 @@ F
   flex-direction: column;
   align-items: center;
   padding: 4px 28px 4px 14px;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-m);
@@ -3354,11 +3368,30 @@ html .plugin-sliding-panes-rotate-header.embedded-note-title .CodeMirror-lines {
   background-color: transparent;
 }
 
-/* Fancy cursor */
-.fancy-cursor .CodeMirror-cursor {
-  border-left: 2px solid var(--text-accent);
+
+
+/* ACCENT CURSOR */
+/* .CodeMirror-cursor {
+  border-left: 2px solid var(--interactive-accent);
   transform: translateX(-0.5px);
+} */
+
+
+/* ARROW CURSOR */
+/* .CodeMirror-cursor {
+	border-left: .4em solid transparent;
+	border-right: .4em solid transparent;
+	border-bottom: 8px solid red;
+	transform: translateX(-.4em);
+} */
+
+
+/* HORIZONTAL CURSOR */
+/*.CodeMirror-cursor {
+  transform:  rotate(90deg) scaleY(.4) scaleX(2) translateY(-1em) translateX(.2em);
 }
+*/
+
 .markdown-source-view {
   padding: 0;
 }
@@ -3553,7 +3586,7 @@ input[type="checkbox"]:checked:before {
   height: 16px;
   font-size: 16px;
   content: "\e9a4";
-  color: rgb(var(--color-white-rgb))
+  color: var(--color-white);
 }
 
 .markdown-preview-section > .contains-task-list {
