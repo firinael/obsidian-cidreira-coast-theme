@@ -17,5 +17,3 @@ It looks the best with almost everything from Hider turned on, and with the "tra
 <br>
 
 ![screenshot](https://user-images.githubusercontent.com/67032657/115099691-e88edc80-9f0d-11eb-8e20-ba428af2aaa1.jpg)
-
-CSS theme for obsidian.md, made with the intent of eliminating distractions and looking very posh.
