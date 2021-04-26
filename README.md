@@ -14,4 +14,6 @@ It looks the best with almost everything from Hider turned on, and with the "tra
 [Sliding Panes (Andy Matuschak Mode)](https://github.com/deathau/sliding-panes-obsidian)| [Petrona](https://fonts.google.com/specimen/Petrona), [Sylexiad Serif Thin](https://www.sylexiad.com/fonts/sylexiad)  (body, italics and bold) |
 [Buttons](https://github.com/shabegom/buttons) <sub>join the cult</sub>| [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (code blocks) |
 
-<insert screenshot here>
+<br>
+
+![screenshot](screenshot.png)
