@@ -137,7 +137,7 @@ id: obsidian-cidreira-coast-theme
     calc(var(--accent-l) - 10%)
   );
   --quote-opening-modifier: var(--shade-70);
-  --text-selection: white;
+  --text-selection: var(--text-highlight-bg);
   --text-highlight-bg: rgba(var(--color-accent-rgb), 0.5);
   --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
   --background-modifier-cover: rgba(100, 100, 100, 0.6);
@@ -155,6 +155,172 @@ body {
     ------------------------------------------------------------------
 */
 
+.view-content {
+	padding: 0 !important;
+}
+
+.view-actions {
+	margin-right: 1px !important;
+}
+
+.view-header-icon {
+	margin-right: 1px !important;
+}
+
+/* Excalidraw styling */
+
+.excalidraw-svg svg {
+	border: 1px solid var(--shade-20) !important;
+	border-radius: var(--radius-s);
+	padding: 2px !important;
+}
+.markdown-preview-view .excalidraw-svg svg {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 80%; */  /* experiment with values */
+  transition: 0.2s;
+}
+
+.markdown-preview-view .excalidraw-svg svg:hover {
+    -webkit-transform:scale(1.8); /* experiment with values */
+    transform: scale(1.19);
+    transition: .2s ease-in-out;
+}
+
+.excalidraw-wrapper {
+	height: 100% !important;
+	width: 100% !important;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.excalidraw .github-corner, .excalidraw .layer-ui__wrapper .encrypted-icon {
+	display: none !important;
+}
+
+/* .excalidraw .Island {
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
+
+.excalidraw .color-picker-label-swatch, .excalidraw .ToolIcon:not(.ToolIcon_type_floating) {
+	border: 2px solid var(--shade-20) !important;
+	background-color: var(--shade-10) !important;
+	transition: .2s;
+}
+*/
+.excalidraw .ToolIcon:hover {
+	background-color: transparent !important;
+	transition: .2s;
+	box-shadow: 0px !important;
+}
+
+.excalidraw .ToolIcon {
+	box-shadow: 0px !important;
+	transition: .2s;
+}
+
+.excalidraw .modal.mod-settings button:not(.mod-cta):not(.mod-warning), .setting-item-control button, button, button.mod-cta {
+	box-shadow: none !important;
+}
+
+.excalidraw button.help-icon:hover, .excalidraw .Modal__close:hover {
+	background-color: transparent !important;
+	transition: .2s !important;
+}
+
+.excalidraw ul.context-menu {
+	margin: 4px !important;
+	background-color: transparent !important;
+	border: 0px solid transparent !important;
+	border-radius: var(--radius-s) !important;
+	box-shadow: none !important;
+	padding: 0px !important;
+}
+
+.excalidraw button.context-menu-option {
+	border: 1px solid transparent !important;
+	border-radius: var(--radius-s) !important;
+	padding-right: 11px !important;
+	padding-left: 11px !important;
+	padding-top: 4px !important;
+	padding-bottom: 4px !important;
+}
+
+.excalidraw button.context-menu-option:hover{
+	color: var(--text-normal) !important;
+	background-color: var(--shade-10) !important;
+}
+
+.excalidraw li::before {
+	display: none !important;
+}
+
+.excalidraw hr.context-menu-option-separator {
+	display: none !important;
+}
+
+.excalidraw .layer-ui__wrapper .disable-zen-mode--visible, .excalidraw .App-menu.App-menu_bottom.zen-mode-transition.App-menu_bottom--transition-left {
+	display: none !important;
+}
+
+.excalidraw .context-menu-option.checkmark::before {
+	left: -15px !important;
+}
+
+.excalidraw input[type="checkbox"] {
+	height: 15px !important;
+	width: 15px !important;
+	vertical-align: middle !important;
+	background: white;
+}
+
+.is-flashing input[type="checkbox"]:checked:before, input[type="checkbox"]:checked:before {
+	color: white !important;
+	align-items: center !important;
+}
+
+/*
+.excalidraw .ToolIcon__keybinding {
+	color: var(--text-normal) !important;
+}
+
+.excalidraw input {
+	height: 20px !important;
+	width: 20px !important;
+	background: white 
+}
+
+.excalidraw .ToolIcon_type_radio:not(.ToolIcon_toggle_opaque):checked+.ToolIcon__icon, .excalidraw .ToolIcon_type_checkbox:not(.ToolIcon_toggle_opaque):checked+.ToolIcon__icon {
+	background-color: var(--color-accent) !important;
+	margin-left: 1px !important;
+	margin-right: 1px !important;
+	margin-top: 3px !important;
+	margin-bottom: 3px !important;
+}
+
+.excalidraw .ToolIcon {
+	height: 50px !important;
+	width: 50px !important;
+	padding: 0px !important;
+}
+
+.excalidraw .ToolIcon_type_button.ToolIcon_size_m.ToolIcon_type_button--show.ToolIcon {
+	background-color: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+.excalidraw .ToolIcon__keybinding {
+	bottom: 4px !important;
+	right: 5px !important;
+} */
+
+/* end excalidraw styling */
+
 img {
 	border: 1px solid var(--shade-20) !important;
 	border-radius: var(--radius-s);
@@ -163,7 +329,6 @@ img {
 
 th {
 	text-align: center;
-	
 }
 
 /* mermaid.js styling */
@@ -658,19 +823,20 @@ img[alt*="grid"],
 img[alt*="left"] {
     float:left;
     clear:left;
-    margin-right: 1rem;
-    margin-bottom: 4px;
-    margin-top: 4px;
+    margin-right: 11px !important;
+    margin-bottom: 2px !important;
+    margin-top: 4px !important;
 }
 
 
 img[alt*="right"] {
     float:right;
     clear:right;
-    margin-left: 1rem;
-    margin-bottom: 4px;
-    margin-top: 4px;
+    margin-left: 11px !important;
+    margin-bottom: 2px !important;
+    margin-top: 4px !important;
 }
+
 img[alt*="center"],img[alt*="centre"] {
     display:block;
     margin-right: auto;
@@ -688,7 +854,7 @@ img[alt*="center"],img[alt*="centre"] {
   margin-bottom: 15pt;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;  /* experiment with values */
+  /* width: 80%; */  /* experiment with values */
   transition: 0.2s;
 }
 
@@ -741,7 +907,7 @@ button,
 
 /* justify paragraph */
 
-.cm-s-obsidian, p {
+.markdown-preview-view, p {
   text-align: justify;
   hyphens: auto;
 }
