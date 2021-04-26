@@ -12,21 +12,23 @@ id: obsidian-cidreira-coast-theme
 
 :root {
   
-  --accent-h: 316.9; /* Accent hue */
-  --accent-s: 15.4%; /* Accent saturation */
-  --accent-l: 40.8%; /* Accent lightness Light Mode */
+  --accent-h: 291.9; /* Accent hue */
+  --accent-s: 14.6%; /* Accent saturation */
+  --accent-l: 49.6%; /* Accent lightness Light Mode */
   --accent-d: calc(var(--accent-l) + 2%); /* Accent lightness d */
 
   --color-black-rgb: 0, 0, 0;
   --color-black: rgb(var(--color-black-rgb));
   --color-white-rgb: 244, 226, 205;
   --color-white: rgb(var(--color-white-rgb));
+  --color-side-rgb: 145, 136, 125;
+  --color-side: rgb(var(--color-side-rgb));
 
   --text: "Quicksand";
   --text-editor: "Petrona";
   --font-monospace: "JetBrains Mono";
   --default-font: "Petrona" !important;
-  --alt-font: "Sylexiad Serif Thin";
+  /* --alt-font: "Petrona"; */
 
   /* Sizes, weights, padding */
 
@@ -72,12 +74,14 @@ id: obsidian-cidreira-coast-theme
 .theme-light {
   --color-red-rgb: 175, 62, 77;
   --color-red: rgb(var(--color-red-rgb));
-  --color-blue-rgb: 109, 152, 186;
+  --color-green-rgb: 80, 193, 178;
+  --color-green: rgb(var(--color-green-rgb));
+  --color-blue-rgb: 28, 129, 176;
   --color-blue: rgb(var(--color-blue-rgb));
-  --color-purple-rgb: 120, 88, 111;
+  --color-purple-rgb: 140, 108, 145;
   --color-purple: rgb(var(--color-purple-rgb));
 
-  --color-accent-rgb: 120, 88, 111;
+  --color-accent-rgb: var(--color-purple-rgb);
   --color-accent: rgb(var(--color-accent-rgb));
 
   --accent-hsl: 316.9, 15.4%, 40.8%;
@@ -361,7 +365,7 @@ body:not(.hider-ribbon):not(.hider-frameless)
 }
 
 .workspace-ribbon.mod-left {
-  background: #91887D !important;
+  background: var(--color-side) !important;
   padding-left: 5px;
   position: relative;
   flex-basis: unset;
@@ -382,8 +386,8 @@ body:not(.hider-ribbon):not(.hider-frameless)
 }
 
 .workspace-split.mod-horizontal.mod-left-split .workspace-tabs{
-	background: #91887D !important;
-	border-color: #91887D !important;
+	background: var(--color-side) !important;
+	border-color: var(--color-side) !important;
 }
 
 .is-translucent .workspace-split.mod-horizontal.mod-left-split .workspace-tabs{
@@ -402,7 +406,7 @@ body:not(.hider-ribbon):not(.hider-frameless)
 
 .workspace-ribbon.mod-left.is-collapsed {
   border-color: transparent;
-  background-color: #8B8677;
+  background-color: var(--color-side);
   transition: border-color 0s ease-in-out 0.2s,
     background-color 0s ease-in-out 0.2s;
 }
@@ -511,15 +515,16 @@ b { font-weight: unset; }
 
 .cm-s-obsidian .cm-strong, strong {
   color: var(--color-blue) !important;
-  font-family: var(--alt-font) !important;
-  font-size: 1.1em;
+  /* font-family: var(--alt-font) !important; */
+  font-size: 1em;
+  font-style: italic;
 }
 
 .markdown-preview-section em, .cm-em, em {
   color: var(--color-red) !important;
-  font-family: var(--alt-font) !important;
+  /* font-family: var(--alt-font) !important; */
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1em;
   }
 
 /* --------------- */
@@ -1174,7 +1179,7 @@ body:not(.is-translucent):not(.hider-frameless)
 /* Window frame */
 
 .titlebar {
-  background: #91887D;
+  background: var(--color-side);
   border-bottom: none;
   height: var(--titlebar-height) !important;
   top: 0 !important;
@@ -2871,7 +2876,7 @@ F
 
 /* filled color for the circle when hover*/
 .graph-view.color-fill-highlight {
-  color: var(--color-accent);
+  color: var(--color-green);
 }
 
 /*  color for the connecting line when hover*/
@@ -2933,6 +2938,8 @@ F
 .vertical-tab-nav-item {
   font-size: 14px;
   padding: 8px 8px;
+  margin-top: 2px;
+  margin-bottom: 1px;
   color: var(--text-normal);
   border: none;
   background: transparent;
@@ -2940,9 +2947,10 @@ F
   font-weight: 500;
   border-radius: var(--radius-s);
   line-height: 1;
+  transition: .2s;
 }
 .vertical-tab-nav-item:hover {
-  background: transparent;
+  background: var(--shade-10);
   transition: .2s ease-in-out;
 }
 .vertical-tab-nav-item.is-active {
@@ -2997,25 +3005,25 @@ F
 /* Scroll bars */
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 7px !important;
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--background-primary);
+  background-color: var(--background-primary) !important;
 }
 ::-webkit-scrollbar-thumb {
   border-width: 0px 4px 6px 0px;
   border-style: solid;
-  border-radius: 0 !important;
+  border-radius: 0;
   border-color: var(--background-primary);
   min-height: 40px;
 }
 .modal .vertical-tab-header::-webkit-scrollbar-track,
 .mod-left-split .workspace-tabs ::-webkit-scrollbar-track {
-  background-color: var(--background-secondary);
+  background-color: var(--background-secondary) !important;
 }
 .modal .vertical-tab-header::-webkit-scrollbar-thumb,
 .mod-left-split .workspace-tabs ::-webkit-scrollbar-thumb {
-  border-color: var(--background-secondary);
+  border-color: var(--background-secondary) !important;
 }
 
 /* Tooltip */
