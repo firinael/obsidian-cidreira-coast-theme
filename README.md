@@ -10,10 +10,8 @@ It looks the best with almost everything from Hider turned on, and with the "tra
 
 ***highly*** recommended plugins| fonts used |
 :--------------------------------:|:--------:|
-[Hider](https://github.com/kepano/obsidian-hider)| Quicksand (UI and menus) |
-[Sliding Panes (Andy Matuschak Mode)](https://github.com/deathau/sliding-panes-obsidian)| Petrona and Computer Modern (body and highlights) |
-[Buttons](https://github.com/shabegom/buttons) <sub>join the cult</sub>| JetBrains Mono (code blocks) |
+[Hider](https://github.com/kepano/obsidian-hider)| [Quicksand](https://fonts.google.com/specimen/Quicksand) (UI and menus) |
+[Sliding Panes (Andy Matuschak Mode)](https://github.com/deathau/sliding-panes-obsidian)| [Petrona](https://fonts.google.com/specimen/Petrona), [Sylexiad Serif Thin](https://www.sylexiad.com/fonts/sylexiad)  (body, italics and bold) |
+[Buttons](https://github.com/shabegom/buttons) <sub>join the cult</sub>| [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (code blocks) |
 
-<br>
-
-![screenshot](https://user-images.githubusercontent.com/67032657/115099691-e88edc80-9f0d-11eb-8e20-ba428af2aaa1.jpg)
+<insert screenshot here>
