@@ -512,14 +512,14 @@ b { font-weight: unset; }
 .cm-s-obsidian .cm-strong, strong {
   color: var(--color-blue) !important;
   font-family: var(--alt-font) !important;
-  font-size: 1.14em;
+  font-size: 1.1em;
 }
 
 .markdown-preview-section em, .cm-em, em {
   color: var(--color-red) !important;
   font-family: var(--alt-font) !important;
   font-weight: bold;
-  font-size: 1.14em;
+  font-size: 1.1em;
   }
 
 /* --------------- */
