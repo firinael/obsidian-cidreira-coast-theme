@@ -2,6 +2,10 @@
 
 ## THIS THEME IS LIGHT-MODE ONLY!
 
+### to-do
+- [ ] add Style Settings support
+- [ ] fix footnotes bug (consult @foreveryone)
+
 ### this theme is 99% derived from [California Coast Theme](https://github.com/mgmeyers/obsidian-california-coast-theme), which is derived from [Minimal Theme](https://github.com/kepano/obsidian-minimal).
 
 It looks the best with almost everything from Hider turned on, and with the "translucent background" option on as well.
