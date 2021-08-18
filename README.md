@@ -15,7 +15,7 @@ It looks the best with almost everything from Hider turned on, and with the "tra
 ***highly*** recommended plugins| fonts used |
 :--------------------------------:|:--------:|
 [Hider](https://github.com/kepano/obsidian-hider)| [Quicksand](https://fonts.google.com/specimen/Quicksand) (UI and menus) |
-[Sliding Panes (Andy Matuschak Mode)](https://github.com/deathau/sliding-panes-obsidian)| [Petrona](https://fonts.google.com/specimen/Petrona), [Sylexiad Serif Thin](https://www.sylexiad.com/fonts/sylexiad)  (body, italics and bold) |
+[Sliding Panes (Andy Matuschak Mode)](https://github.com/deathau/sliding-panes-obsidian)| [Petrona](https://fonts.google.com/specimen/Petrona) (body, italics and bold) |
 [Buttons](https://github.com/shabegom/buttons) <sub>join the cult</sub>| [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (code blocks) |
 
 <br>
