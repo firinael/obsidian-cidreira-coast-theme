@@ -155,6 +155,17 @@ body {
     ------------------------------------------------------------------
 */
 
+/* enlarge MathJax (LaTeX Math) */
+
+.MJX-TEX {
+  font-size: 130%;
+  line-height: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+/* end */
+
 .view-content {
 	padding: 0 !important;
 }
@@ -165,6 +176,19 @@ body {
 
 .view-header-icon {
 	margin-right: 1px !important;
+}
+
+/* Dictionary styling */
+
+button.dictionary-button.svelte-19jc5lb.svelte-19jc5lb {
+    margin-right: 3px;
+    padding-top: 10px;
+
+}
+/* end */
+
+.markdown-preview-view pre {
+    border-radius: var(--radius-s) !important;
 }
 
 /* Excalidraw styling */
@@ -321,6 +345,10 @@ body {
 
 /* end excalidraw styling */
 
+input.quickAddPromptInput {
+    margin: 0px 4px 4px;
+}
+
 img {
 	border: 1px solid var(--shade-20) !important;
 	border-radius: var(--radius-s);
@@ -414,14 +442,13 @@ th {
     ------------------------------------------------------------------
 */
 
-button.mod-warning {
+button.mod-warning, button.cMenuSettingsButton.cMenuSettingsButtonDelete {
 	background-color: var(--text-error) !important;
 	transition: .2s;
 }
 
-button.mod-warning:hover {
+button.mod-warning:hover, button.cMenuSettingsButton.cMenuSettingsButtonDelete:hover {
 	background-color: red !important;
-	color: black;
 	transition: .2s;
 }
 
@@ -697,8 +724,13 @@ b { font-weight: unset; }
 
 @media print {
   /* pagebreak before all ## headings */
+  h1 {
+  	page-break-before: always !important;
+  	page-break-after: avoid !important;
+  }
+
   h2 {
-    page-break-before: always !important;
+  	page-break-after: avoid !important;
   }
 
   h3,
@@ -764,22 +796,26 @@ figcaption#center {
 
 .lt-major {
   cursor: pointer;
+  transition: .2s !important;
 }
+
 
 .lt-predictions-container {
   background-color: var(--color-white) !important;
   animation-duration: 0.2s !important;
   transition: height 0.2s !important;
-  border-radius: 25px !important;
+  border-radius: var(--radius-s) !important;
   padding: 11px !important;
   border: 2px solid var(--shade-10);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: auto !important;
 }
 
 .lt-predictions-container > button {
-  transition-delay: 0.2s !important
+  transition-delay: 0.2s !important;
   background-color: var(--shade-10) !important;
   color: var(--text) !important;
+  border-radius: var(--border-m);
 }
 
 .lt-buttoncontainer > button {
@@ -870,6 +906,28 @@ img[alt*="center"],img[alt*="centre"] {
   */
 
 
+/* .multiChoiceListItem {
+    margin-top: 8px !important;
+} */
+
+.multiChoiceListItem svg {
+    color: var(--text-normal);
+
+}
+
+/* Dropdowns */
+
+#addChoiceTypeSelector {
+    font-family: var(--text);
+    border-radius: var(--radius-s);
+}
+
+#addChoiceTypeSelector > option {
+    border-radius: var(--radius-s);
+    font-family: var(--text);
+    background-color: white;
+}
+
 /* Headings and fonts */
 
 strong {
@@ -915,8 +973,8 @@ button,
 /* Eliminate margin (gap, space) under headings - Preview mode only */
 /* H1 underlined too */
 .markdown-preview-view h1 {
-  padding-top: 5px !important;
-  margin-top: -10px !important;
+  padding-top: 15px !important;
+  margin-top: 5px !important;
   margin-bottom: -0px !important;
   padding-bottom: 5px !important;
   border-bottom: 2px solid var(--shade-20);  
@@ -931,6 +989,14 @@ button,
     margin-top: 20px !important;
     margin-bottom: -7px !important;
     padding-bottom: 5px !important;
+}
+
+.markdown-preview-view h3 {
+    margin-left: 11px;
+}
+
+.markdown-preview-view h4 {
+    margin-left: 22px;
 }
 
 element.style {
@@ -1838,16 +1904,9 @@ textarea {
   padding: 8px 10px;
 }
 
-.modal button:not(.mod-cta):not(.mod-warning){
-	background-color: var(--interactive-accent);
-}
-
-.modal.mod-settings button:not(.mod-cta):not(.mod-warning),
-.setting-item-control button,
-button,
-button.mod-cta {
+button, .lt-predictions-container button {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: unset;
   color: var(--text-on-accent);
   display: inline-flex;
   flex-direction: column;
@@ -1863,6 +1922,15 @@ button.mod-cta {
   order: 0;
   flex-grow: 0;
   cursor: var(--cursor);
+  font-family: var(--text) !important;
+}
+
+.modal button:not(.mod-cta):not(.mod-warning) {
+    background-color: var(--interactive-accent);
+}
+
+.setting-item-control button {
+    background-color: var(--interactive-accent) !important;
 }
 
 .modal.mod-settings button:not(.mod-cta):not(.mod-warning):hover
@@ -1910,11 +1978,6 @@ li::marker{
 	font-weight: bold;
 }
 
-li {
-	margin-bottom: 10px;
-}
-
-
 /* --------------- */
 /* Toggle switches */
 
@@ -1960,6 +2023,10 @@ li {
   padding: 3px 0;
 }
 
+.nav-folder.mod-root > .nav-folder-title .nav-folder-title-content {
+    display: none;
+}
+
 .nav-folder.mod-root
   > .nav-folder-title.is-being-dragged-over
   .nav-folder-title-content {
@@ -1988,8 +2055,21 @@ li {
   line-height: 1;
 }
 
-.nav-buttons-container .nav-action-button::after {
+.nav-action-button.collapse-all-plugin-button {
+    position: relative;
+    transform: translateY(2px) translateX(-3px);
+}
+
+.nav-buttons-container .nav-action-button::after, .nav-action-button.collapse-all-plugin-button {
 	padding: 3px;
+}
+
+.nav-action-button.collapse-all-plugin-button svg {
+    padding-bottom: 3px;
+}
+
+.nav-action-button.collapse-all-plugin-button:hover {
+    padding: 3px !important;
 }
 
 .nav-files-container {
@@ -3353,7 +3433,7 @@ body.plugin-sliding-panes .mod-root .graph-controls {
 }
 
 .plugin-sliding-panes-rotate-header .markdown-preview-sizer {
-  padding-top: 5rem;
+  padding-top: 2em;
 }
 
 .plugin-sliding-panes-rotate-header
@@ -3368,7 +3448,7 @@ body.plugin-sliding-panes .mod-root .graph-controls {
 }
 
 html .plugin-sliding-panes-rotate-header .CodeMirror-lines {
-  padding-top: 5rem;
+  padding-top: 2em;
 }
 
 .plugin-sliding-panes-rotate-header .view-header-icon:after {
@@ -3787,10 +3867,14 @@ html .CodeMirror-lines {
   color: var(--text-normal) !important;
 }
 .cm-s-obsidian span.cm-formatting-task {
-  display: inline-block;
-  font-weight: 500;
-  color: var(--text-normal);
-  width: 1.3em;
+  display: inline;
+  color: var(--color-purple);
+  position: relative;
+}
+
+.HyperMD-list-line {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 /* Editor Mode Quotes */
@@ -4115,7 +4199,7 @@ iframe {
   border-width: 0px 0px 0px 1px;
   background-color: var(--shade-10) !important;
   color: var(--text-muted);
-  padding: 6px !important;
+  padding: 11px !important;
   margin-inline-start: var(--nested-padding);
   text-align: center;
   margin-right: auto;
@@ -4125,6 +4209,10 @@ iframe {
 
 .markdown-preview-view blockquote p {
 	margin-left: 35px !important;
+}
+
+.markdown-preview-view blockquote li {
+	text-align: justify;
 }
 
 /* Tables */
@@ -4151,10 +4239,27 @@ iframe {
 
 /* Preview Mode Lists  */
 
+/* Long bullet list: connect the same levels of bullets with vertical "lines" */
+.cm-hmd-list-indent .cm-tab, ul ul { position: relative; }
+.cm-hmd-list-indent .cm-tab::before, ul ul::before {
+ content:'';
+ border-left: 1px solid var(--color-accent);
+ position: absolute;
+}
+
+.cm-hmd-list-indent .cm-tab::before { left: 0; top: -5px; bottom: -4px; 
+}
+
+ul ul::before { left: -12px; top: 0; bottom: 0; /* change "left:" value for align of vert. line */
+}
+
 ul {
   padding-inline-start: 2em;
   list-style: none;
 }
+
+/* end relation lines */
+
 ul ul,
 ol ul,
 ol ol ul,
@@ -4163,6 +4268,7 @@ ul ol ul,
 ul ul ul {
   list-style: none;
 }
+
 ul > li:not(.task-list-item)::before {
   content: "\2022";
   color: var(--text-faint);
@@ -5404,6 +5510,16 @@ body {
   border-collapse: unset;
   border-spacing: 0;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dataview-result-list-li {
+    margin-left: 20px;
+}
+
+.dataview th.table-view-th {
+    border-bottom: none;
 }
 
 .markdown-preview-view th,
@@ -5413,6 +5529,7 @@ body {
   border-color: var(--shade-20);
   border-left: none;
   border-right: none;
+  text-align: center !important;
 }
 
 .markdown-preview-view th:first-child,
@@ -5420,11 +5537,31 @@ body {
   padding-left: 15px;
 }
 
-.markdown-preview-view th {
+.markdown-preview-view th, .excel .dataview th:nth-child(1),.excel .dataview td:nth-child(1), .excel td:first-child {
   background-color: var(--shade-20);
   border-bottom: none;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 16px !important;
+  border-top: none;
+}
+
+.excel hr, .excel hd, .excel tr, .excel td {
+    line-height: 18px;
+}
+
+#cMenuModalBar .cMenuCommandItem svg {
+    color: var(--text-normal);
+}
+
+#cMenuModalBar button.cMenuCommandItem:hover {
+  background-color: var(--shade-10) !important;
+  color: var(--text-normal);
+  transition: .2s;
+}
+
+.excel .markdown-preview-view, .excel .markdown-preview-sizer {
+    max-width: 100% !important;
 }
 
 .markdown-preview-view tr + tr td {
@@ -5590,14 +5727,14 @@ body {
     --h2-weight: 500; 
     --h2-style: normal; 
 
-    --h3-size: 1.4em;
+    --h3-size: 1.7em;
     --h3-line-height: 1.4;
     --h3-margin-top: 1.75;
     --h3-margin-bottom: 0.5; 
     --h3-weight: 500; 
     --h3-style: normal; 
 
-    --h4-size: 1.2em;
+    --h4-size: 1.3em;
     --h4-line-height: 1.5;
     --h4-margin-top: 1.5;
     --h4-margin-bottom: 0.5; 
